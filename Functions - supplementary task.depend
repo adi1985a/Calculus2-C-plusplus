@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1678210878 source:c:\users\hp\desktop\programy na github\c++\programs\zadanie dodatkowe\main.cpp
+	<iostream>
+	<ctime>
+	<cstdlib>
+	<iomanip>
+
+1678214478 source:c:\users\hp\desktop\portfolio programy na github\c++\programs\functions - supplementary task\main.cpp
+	<iostream>
+	<ctime>
+	<cstdlib>
+	<iomanip>
+
+1742088834 source:f:\my portafolio it ulepszona\c++\programs\functions - supplementary task\main.cpp
+	<iostream>
+	<ctime>
+	<cstdlib>
+	<iomanip>
+	<fstream>
+	<windows.h>
+	<limits>
+
