@@ -22,6 +22,10 @@ _A C++ console application for generating, displaying, analyzing, and managing 2
 
 **MatrixMaestro**, developed by Adrian Lesniak, is a C++ console application designed to perform a variety of operations on two-dimensional matrices (arrays). The program can generate random matrices (an 8x8 matrix 'A' and a 5x8 matrix 'B'), display them with formatted output, and execute specific analyses: calculating the arithmetic mean of elements below matrix A's main diagonal, computing column sums for matrix B (Table C), and finding the maximum value in each row of matrix B (Table D). Additionally, it supports saving the generated matrices to text files (`matrix_A.txt`, `matrix_B.txt`) and loading them back. The application features a colorful, menu-driven interface and leverages Windows-specific console functions for an enhanced user experience.
 
+![Demo GIF](screenshots/1.gif)
+
+---
+
 ## ✨ Key Features & Matrix Operations
 
 *   🎲 **Matrix Generation & Display**:
@@ -45,48 +49,6 @@ _A C++ console application for generating, displaying, analyzing, and managing 2
 *   ⚙️ **Robust Operation**:
     *   The main program loop continues until the user chooses to exit (option 0).
     *   Handles invalid menu choices with informative error messages.
-
-
-
-# 🔢🧮 MatrixMaestro: C++ Array Operations & Analysis 📊
-
-_A C++ console application for generating, displaying, analyzing, and managing 2D matrices with various mathematical operations._
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![C++](https://img.shields.io/badge/Language-C%2B%2B%2011%2B-blue.svg)](https://isocpp.org/)
-[![Platform: Windows](https://img.shields.io/badge/Platform-Windows-lightgrey.svg)](https://www.microsoft.com/windows)
-
----
-
-## 📄 Overview
-
-**MatrixMaestro** is a C++ console application by Adrian Lesniak for working with two matrices:
-- Matrix **A**: 8x8
-- Matrix **B**: 5x8
-
-The program allows you to generate random matrices, display them, calculate the arithmetic mean below the main diagonal (A), compute column sums (B), find row maximums (B), and save/load matrices from files. The interface is menu-driven and uses Windows console colors for clarity.
-
-![Demo GIF](screenshots/1.gif)
----
-
-## ✨ Key Features
-
-- **Matrix Generation & Display**
-  - Generate random floating-point numbers (0.0–5.0) for matrices A and B.
-  - Display matrices with aligned, fixed-precision formatting.
-
-- **Matrix Analysis**
-  - Calculate the arithmetic mean of elements below the main diagonal of matrix A.
-  - Compute column sums for matrix B (Table C).
-  - Find the maximum value in each row of matrix B (Table D).
-
-- **File Operations**
-  - Save matrices A and B to `matrix_A.txt` and `matrix_B.txt`.
-  - Load matrices from these files, with error handling.
-
-- **User Interface**
-  - Colorful, menu-driven console interface (Windows only).
-  - Clear error messages for invalid input or file errors.
 
 ---
 
