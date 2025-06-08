@@ -46,110 +46,144 @@ _A C++ console application for generating, displaying, analyzing, and managing 2
     *   The main program loop continues until the user chooses to exit (option 0).
     *   Handles invalid menu choices with informative error messages.
 
+
+
+# 🔢🧮 MatrixMaestro: C++ Array Operations & Analysis 📊
+
+_A C++ console application for generating, displaying, analyzing, and managing 2D matrices with various mathematical operations._
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![C++](https://img.shields.io/badge/Language-C%2B%2B%2011%2B-blue.svg)](https://isocpp.org/)
+[![Platform: Windows](https://img.shields.io/badge/Platform-Windows-lightgrey.svg)](https://www.microsoft.com/windows)
+
+---
+
+## 📄 Overview
+
+**MatrixMaestro** is a C++ console application by Adrian Lesniak for working with two matrices:
+- Matrix **A**: 8x8
+- Matrix **B**: 5x8
+
+The program allows you to generate random matrices, display them, calculate the arithmetic mean below the main diagonal (A), compute column sums (B), find row maximums (B), and save/load matrices from files. The interface is menu-driven and uses Windows console colors for clarity.
+
+![Demo GIF](screenshots/1.gif)
+---
+
+## ✨ Key Features
+
+- **Matrix Generation & Display**
+  - Generate random floating-point numbers (0.0–5.0) for matrices A and B.
+  - Display matrices with aligned, fixed-precision formatting.
+
+- **Matrix Analysis**
+  - Calculate the arithmetic mean of elements below the main diagonal of matrix A.
+  - Compute column sums for matrix B (Table C).
+  - Find the maximum value in each row of matrix B (Table D).
+
+- **File Operations**
+  - Save matrices A and B to `matrix_A.txt` and `matrix_B.txt`.
+  - Load matrices from these files, with error handling.
+
+- **User Interface**
+  - Colorful, menu-driven console interface (Windows only).
+  - Clear error messages for invalid input or file errors.
+
+---
+
+## 🖥️ System Requirements
+
+- **OS:** Windows (uses `<windows.h>`)
+- **Compiler:** C++11 or newer (e.g., g++, MSVC)
+- **Permissions:** Write access to the program directory for saving/loading files
+
+---
+
 ## 🖼️ Screenshots
 
-**Coming soon!**
+_Screenshots showcasing the main menu, matrix display, outputs for mean calculation, column sums, row maximums, and examples of the saved matrix files._
 
-_This section will be updated with screenshots showcasing the main menu, matrix display, outputs for mean calculation, column sums, row maximums, and examples of the saved matrix files._
+<p align="center">
+  <img src="screenshots\1.jpg" width="300"/>
+  <img src="screenshots\2.jpg" width="300"/>
+  <img src="screenshots\3.jpg" width="300"/>
+  <img src="screenshots\4.jpg" width="300"/>
+  <img src="screenshots\5.jpg" width="300"/>
+  <img src="screenshots\6.jpg" width="300"/>
+  <img src="screenshots\7.jpg" width="300"/>
+  <img src="screenshots\8.jpg" width="300"/>
+</p>
 
-## ⚙️ System Requirements
 
-*   **Operating System**: Windows (due to dependencies like `<windows.h>` for `SetConsoleTextAttribute` and `system("cls")`).
-*   **C++ Compiler**: A C++ compiler supporting C++11 or later (e.g., g++, MSVC).
-*   **Standard C++ Libraries**: `<iostream>`, `<vector>` (if used for matrices, though description implies fixed-size 2D arrays), `<ctime>`, `<cstdlib>`, `<iomanip>`, `<fstream>`, `<limits>`.
-*   **Write Permissions**: The application needs write permissions in its execution directory to create/overwrite `matrix_A.txt` and `matrix_B.txt`.
+## 🛠️ Installation & Setup
 
-## 🛠️ Installation and Setup
-
-1.  **Clone the Repository**:
+1. **Clone the repository**
     ```bash
     git clone <repository-url>
     cd <repository-directory>
     ```
-    (Replace `<repository-url>` and `<repository-directory>` with your specific details)
-
-2.  **Save Main Code**:
-    Ensure your main program logic (including all matrix operation functions, UI functions, and `main()`) is saved as `matrix_operations.cpp` (or your chosen main file name) in the project directory. *(The description implies a single-file structure for the core logic, with utilities potentially inlined or also within this file if no separate `utils.h` is mandated by the actual code for this project).*
-
-3.  **Compile the Program**:
-    Open a terminal (Command Prompt, PowerShell, etc.) in the project directory.
-    **Example using g++ (MinGW):**
+2. **Compile**
     ```bash
-    g++ matrix_operations.cpp -o matrix_operations.exe -std=c++11 -static-libgcc -static-libstdc++
+    g++ main.cpp -o matrix_maestro.exe -std=c++11 -static-libgcc -static-libstdc++
     ```
-    *(Adjust if you have separate utility `.cpp` files that need to be compiled and linked).*
-
-4.  **Run the Program**:
+3. **Run**
     ```bash
-    .\matrix_operations.exe
+    .\matrix_maestro.exe
     ```
-    (or `matrix_operations.exe` in CMD)
+
+---
 
 ## 💡 Usage Guide
 
-1.  Compile and run `matrix_operations.exe` as detailed above.
-2.  **Interface**:
-    *   The program will display a header with program details and then the main menu:
-        1.  Generate new matrices (A: 8x8, B: 5x8)
-        2.  Display matrices A and B
-        3.  Calculate arithmetic mean below main diagonal of matrix A
-        4.  Calculate column sums for matrix B (Table C)
-        5.  Find row maximums for matrix B (Table D)
-        6.  Save matrices to file
-        7.  Load matrices from file
-        0.  Exit
-3.  **Input**:
-    *   Select a menu option (0–7) by typing the number and pressing Enter.
-    *   Invalid menu inputs will trigger an error message and re-display the menu.
-4.  **Output**:
-    *   **Option 1 (Generate)**: Confirms that new random matrices A and B have been generated.
-    *   **Option 2 (Display)**: Shows the contents of matrix A (8x8) and matrix B (5x8) with neatly aligned numbers (e.g., "3.20 4.70 ...").
-    *   **Option 3 (Mean for A)**: Displays the calculated arithmetic mean of elements below A's main diagonal (e.g., "Arithmetic mean of elements below main diagonal of matrix A: 2.50").
-    *   **Option 4 (Column Sums for B)**: Shows the sums for each column of matrix B, labeled as Table C (e.g., "Table C (Column Sums for B): 12.30 15.70 ...").
-    *   **Option 5 (Row Maximums for B)**: Displays the maximum value found in each row of matrix B, labeled as Table D (e.g., "Table D (Row Maximums for B): 4.90 5.00 ...").
-    *   **Option 6 (Save)**: Confirms that matrices A and B have been saved to `matrix_A.txt` and `matrix_B.txt` respectively.
-    *   **Option 7 (Load)**: Confirms successful loading of matrices from files, or an error message if files are not found or cannot be read.
-5.  **Actions**:
-    *   After each operation and display of results, you will be prompted to press any key to return to the main menu.
-    *   Select option `0` from the main menu to exit the application.
+- On launch, you'll see a menu:
+    1. Generate new matrices
+    2. Display matrices
+    3. Calculate arithmetic mean below main diagonal (A)
+    4. Calculate column sums (B, Table C)
+    5. Find row maximums (B, Table D)
+    6. Save matrices to file
+    7. Load matrices from file
+    0. Exit
 
-## 🗂️ File Structure & Data Persistence
+- Enter a number (0–7) and press Enter.
+- After each operation, press any key to return to the menu.
+- Matrices are saved as space-separated values, one row per line.
 
-*   `matrix_operations.cpp`: The main C++ source file containing all program logic, including matrix generation, operations, UI management, and file handling.
-*   `matrix_A.txt`: A plain text file where the data for matrix A is stored. Created or overwritten by the "Save" operation and read by the "Load" operation.
-*   `matrix_B.txt`: A plain text file where the data for matrix B is stored. Created or overwritten by the "Save" operation and read by the "Load" operation.
-*   `README.md`: This documentation file.
+---
+
+## 🗂️ File Structure
+
+- `main.cpp` — Main source file with all logic
+- `matrix_A.txt` — Saved data for matrix A
+- `matrix_B.txt` — Saved data for matrix B
+- `README.md` — This documentation
+
+---
 
 ## 📝 Technical Notes
 
-*   **Windows Specifics**: The project heavily relies on Windows-specific headers (`<windows.h>`) and functions (`SetConsoleTextAttribute`, `system("cls")`, potentially `_getch()`) for console appearance and interaction. Adapting for true cross-platform compatibility would require using ANSI escape codes for colors, `system("clear")` for screen clearing on Unix-like systems, or a cross-platform library like ncurses.
-*   **Random Number Generation**: Uses `rand()` seeded with `time(NULL)` to generate floating-point numbers, typically scaled to the range 0.0 to 5.0. For more uniform or cryptographically secure random numbers, C++11 `<random>` utilities are preferred.
-*   **Matrix Representation**: Matrices A (8x8) and B (5x8) are likely implemented as fixed-size 2D C-style arrays (e.g., `float matrixA[8][8];`) or `std::array<std::array<float, 8>, 8>`.
-*   **File Format for Matrices**: The `.txt` files for matrices will store the numbers in a way that allows them to be easily read back, likely space-separated values per row, with each row on a new line.
-*   **Input Validation for File Ops**: The description notes "no input validation for file operations; assumes correct file format." Robust applications would include checks for file integrity and correct formatting upon loading.
-*   **Potential Enhancements**: Could be extended by adding more complex matrix operations (e.g., multiplication, transpose, determinant, inverse), implementing error logging to a separate file, improving cross-platform support, or adding more sophisticated input validation for file data.
+- Uses `rand()` seeded with `time(NULL)` for random numbers.
+- Matrices are fixed-size C-style arrays.
+- File operations assume correct format; basic error handling is included.
+- Uses Windows API for colored output and screen clearing.
+
+---
 
 ## 🤝 Contributing
 
-Contributions to **MatrixMaestro** are highly encouraged! If you have ideas for adding new matrix operations, improving the efficiency of existing algorithms, enhancing cross-platform compatibility, or refining the user interface:
+Contributions are welcome! Please fork the repo, create a feature branch, and open a pull request.
 
-1.  Fork the repository.
-2.  Create a new branch for your feature (`git checkout -b feature/YourMatrixEnhancement`).
-3.  Make your changes and commit them (`git commit -m 'Feature: Implement YourMatrixEnhancement'`).
-4.  Push to the branch (`git push origin feature/YourMatrixEnhancement`).
-5.  Open a Pull Request.
-
-Please ensure your code is well-commented and adheres to good C++ practices.
+---
 
 ## 📃 License
 
-This project is licensed under the **MIT License**.
-(If you have a `LICENSE` file in your repository, refer to it: `See the LICENSE file for details.`)
+MIT License. See the LICENSE file for details.
+
+---
 
 ## 📧 Contact
 
-Created by **Adrian Lesniak**.
-For questions, feedback, or issues, please open an issue on the GitHub repository or contact the repository owner.
+Created by **Adrian Lesniak**.  
+For questions or feedback, open an issue on GitHub.
 
 ---
 📐 _Manipulating matrices with precision and clarity!_
